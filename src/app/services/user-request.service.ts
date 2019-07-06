@@ -14,8 +14,11 @@ export class UserRequestService {
     return this.http.get(`${this.url}user`)
     .toPromise()
     .then((result:ServerResponse)=>{
-      console.log(result.data)
-      return Promise.resolve(result.data)
+      if (result.code === 1) {
+        console.log(result.data)
+        return Promise.resolve(result.data)
+      }
+      throw new Error(`Can't show list user!`)
     })
     .catch(err => Promise.reject(err))
   }

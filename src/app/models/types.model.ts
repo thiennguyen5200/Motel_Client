@@ -1,6 +1,6 @@
 import { User } from './user.model'
 export interface ServerResponse{
-    code: boolean;
+    code: number;
     message?: string;
-    data?: Array<User>;
+    data?: any;
 }

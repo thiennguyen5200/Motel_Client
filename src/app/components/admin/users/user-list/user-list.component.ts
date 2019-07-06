@@ -21,7 +21,7 @@ export class UserListComponent implements OnInit {
   ) { 
   this.userRequestService.getAllUser()
   .then((data: Array<User>)=>{
-    this.store.dispatch({type:'INIT_USER',user:data})
+    this.store.dispatch({type:'INIT_USER', users: data})
     this.store.select('user').subscribe(arr => this.users = arr)
   })
 
